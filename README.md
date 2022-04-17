@@ -15,15 +15,15 @@ IObserve is a lightweight script that allows you to easily use browsers' `Inters
 In order to use IObserve, you shall markup your observed elements like this
 
 ```html
-<div class="iobserve">...</div>
+<div data-iobserve>...</div>
 ```
 
 Then, in your javascript code:
 
 ```js
 const onEnter: (el) => {
-  console.log(el, "entered the viewport");
   // do something with it
+  console.log(el, "entered the viewport");
 }
 
 const iobserveInstance = new IObserve({
@@ -48,7 +48,7 @@ To include IObserve from a CDN:
 <script src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
 ```
 
-To be sure that the DOM for your lazy content is ready when you instantiate IObserve, **place the script tag right before the closing `</body>` tag**. 
+To be sure that the DOM for your lazy content is ready when you instantiate IObserve, **place the script tag right before the closing `</body>` tag**.
 
 If more DOM elements are added at a later stage, you'll need to call `iobserveInstance.update();` to make IObserve check for new elements in the DOM.
 
@@ -158,13 +158,13 @@ var aIObserve = new IObserve({
 For every instance of _IObserve_ you can pass in some options, to alter its default behaviour.
 Here's the list of the options.
 
-| Name               | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default value  | Example value                          |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | -------------------------------------- |
-| `elements`         | The CSS selector of the elements to load lazily.                                                                                                                                                                                                                                                                                                                                                                                                             | `".iobserve"` | `".somethingElse"`                     |
-| `threshold`        | A number of pixels representing the outer distance off the scrolling area from which to start loading the elements.                                                                                                                                                                                                                                                                                                                                          | `0`            | `500`                                  |
-| `thresholds`       | Similar to `threshold`, but accepting multiple values and both `px` and `%` units. It maps directly to the `rootMargin` property of IntersectionObserver ([read more](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)), so it must be a string with a syntax similar to the CSS `margin` property. You can use it when you need to have different thresholds for the scrolling area. It overrides `threshold` when passed. | `null`         | `"500px 10%"`                          |
-| `onEnter`          | A callback function which is called whenever an element enters the viewport. Arguments: DOM element, intersection observer entry, iobserve instance.                                                                                                                                                                                                                                                                                                         | `null`         | `(el)=>{console.log("Entered", el)}`   |
-| `onExit`           | A callback function which is called whenever an element exits the viewport. Arguments: DOM element, intersection observer entry, iobserve instance.                                                                                                                                                                                                                                                                                                          | `null`         | `(el)=>{console.log("Exited", el)}`    |
+| Name         | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default value | Example value                        |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------------------------ |
+| `elements`   | The CSS selector of the elements to load lazily.                                                                                                                                                                                                                                                                                                                                                                                                             | `"[data-iobserve]"` | `".somethingElse"`                   |
+| `threshold`  | A number of pixels representing the outer distance off the scrolling area from which to start loading the elements.                                                                                                                                                                                                                                                                                                                                          | `0`           | `500`                                |
+| `thresholds` | Similar to `threshold`, but accepting multiple values and both `px` and `%` units. It maps directly to the `rootMargin` property of IntersectionObserver ([read more](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)), so it must be a string with a syntax similar to the CSS `margin` property. You can use it when you need to have different thresholds for the scrolling area. It overrides `threshold` when passed. | `null`        | `"500px 10%"`                        |
+| `onEnter`    | A callback function which is called whenever an element enters the viewport. Arguments: DOM element, intersection observer entry, iobserve instance.                                                                                                                                                                                                                                                                                                         | `null`        | `(el)=>{console.log("Entered", el)}` |
+| `onExit`     | A callback function which is called whenever an element exits the viewport. Arguments: DOM element, intersection observer entry, iobserve instance.                                                                                                                                                                                                                                                                                                          | `null`        | `(el)=>{console.log("Exited", el)}`  |
 
 ### Methods
 
@@ -172,10 +172,10 @@ Here's the list of the options.
 
 You can call the following methods on any instance of IObserve.
 
-| Method name    | Effect                                                                                                                                                           | Use case                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `update()`     | Make IObserve to re-check the DOM for `elements` elements in the page.                                                                       | Update IObserve after you added or removed DOM elements to the page.              |
-| `destroy()`    | Destroys the instance, unsetting instance variables and removing listeners.                                                                                      | Free up some memory. Especially useful for Single Page Applications.              |
+| Method name | Effect                                                                      | Use case                                                             |
+| ----------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `update()`  | Make IObserve to re-check the DOM for `elements` elements in the page.      | Update IObserve after you added or removed DOM elements to the page. |
+| `destroy()` | Destroys the instance, unsetting instance variables and removing listeners. | Free up some memory. Especially useful for Single Page Applications. |
 
 ---
 
