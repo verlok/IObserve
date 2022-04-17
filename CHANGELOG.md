@@ -2,6 +2,16 @@
 
 ## Version 1
 
+#### 0.2.0
+
+- Removed lots of useless code
+- Candidate for 1.0?
+
+#### 0.1.0
+
+- Default selector changed to `[data-iobserve]`
+- Added first demo
+
 #### 0.0.1
 
 - Copied code over from vanilla-lazyload.
