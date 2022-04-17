@@ -45,7 +45,7 @@ npm install iobserve
 To include IObserve from a CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iobserve@0.2.0/dist/iobserve.min.js"></script>
 ```
 
 To be sure that the DOM for your lazy content is ready when you instantiate IObserve, **place the script tag right before the closing `</body>` tag**.
@@ -78,7 +78,7 @@ To do so, **you must define the options before including the script**. You can p
 Then include the script.
 
 ```html
-<script async src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/iobserve@0.2.0/dist/iobserve.min.js"></script>
 ```
 
 **Possibly place the script tag right before the closing `</body>` tag**. If you can't do that, IObserve could be executed before the browser has loaded all the DOM, and you'll need to call its `update()` method to make it check the DOM again.
@@ -109,7 +109,7 @@ Same as above, but you must put the `addEventListener` code shown below before i
 Then include the script.
 
 ```html
-<script async src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/iobserve@0.2.0/dist/iobserve.min.js"></script>
 ```
 
 Now you'll be able to call its methods, like:
