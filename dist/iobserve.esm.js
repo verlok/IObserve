@@ -11,7 +11,7 @@ const supportsClassList = runningOnBrowser && "classList" in document.createElem
 const isHiDpi = runningOnBrowser && window.devicePixelRatio > 1;
 
 const defaultSettings = {
-    elements: ".iobserve",
+    elements: "[data-iobserve]",
     container: isBot || runningOnBrowser ? document : null,
     threshold: 300,
     thresholds: null,

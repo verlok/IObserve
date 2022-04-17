@@ -25,7 +25,7 @@ define((function () { 'use strict';
   var isHiDpi = runningOnBrowser && window.devicePixelRatio > 1;
 
   var defaultSettings = {
-    elements: ".iobserve",
+    elements: "[data-iobserve]",
     container: isBot || runningOnBrowser ? document : null,
     threshold: 300,
     thresholds: null,
