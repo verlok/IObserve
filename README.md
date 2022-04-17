@@ -48,23 +48,9 @@ To include IObserve from a CDN:
 <script src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
 ```
 
-## How to use
+To be sure that the DOM for your lazy content is ready when you instantiate IObserve, **place the script tag right before the closing `</body>` tag**. 
 
-Then, in your javascript code:
-
-```js
-const onEnter: (el) => {
-  console.log(el, "entered the viewport");
-  // do something with it
-}
-
-const iobserveInstance = new IObserve({
-  // Your custom settings go here
-  onEnter: onEnter
-});
-```
-
-To be sure that DOM for your lazy content is ready when you instantiate IObserve, **place the script tag right before the closing `</body>` tag**. If more DOM arrives later, e.g. via an AJAX call, you'll need to call `iobserveInstance.update();` to make IObserve check the DOM again.
+If more DOM elements are added at a later stage, you'll need to call `iobserveInstance.update();` to make IObserve check for new elements in the DOM.
 
 ```js
 iobserveInstance.update();
