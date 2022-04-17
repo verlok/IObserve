@@ -1,0 +1,25 @@
+{
+  "name": "iobserve",
+  "homepage": "https://www.andreaverlicchi.eu/iobserve/",
+  "authors": ["Andrea Verlicchi <andrea.verlicchi@gmail.com>"],
+  "description": "IObserve is a lightweight script that allows you to easily use browsers' `IntersectionObserver` API",
+  "main": "dist/iobserve.min.js",
+  "keywords": ["IntersectionObserver", "easy", "vanilla", "plugin", "lazyload"],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "img",
+    "demos",
+    "Gruntfile.js",
+    "README.md",
+    "todo.md",
+    "favicon.ico",
+    "index.html",
+    "package.json"
+  ]
+}
