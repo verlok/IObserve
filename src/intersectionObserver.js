@@ -1,12 +1,11 @@
 import { supportsIntersectionObserver } from "./environment";
 import { onEnter, onExit } from "./intersectionHandlers";
-import { shouldUseNative } from "./native";
 import { resetObserver } from "./unobserve";
 
 export const isIntersecting = (entry) => entry.isIntersecting || entry.intersectionRatio > 0;
 
 const getObserverSettings = (settings) => ({
-    root: settings.container === document ? null : settings.container,
+    root: document,
     rootMargin: settings.thresholds || settings.threshold + "px"
 });
 
@@ -30,7 +29,7 @@ export const updateObserver = (observer, elementsToObserve) => {
 };
 
 export const setObserver = (settings, instance) => {
-    if (!supportsIntersectionObserver || shouldUseNative(settings)) {
+    if (!supportsIntersectionObserver) {
         return;
     }
     instance._observer = new IntersectionObserver((entries) => {
