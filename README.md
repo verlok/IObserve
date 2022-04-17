@@ -32,19 +32,23 @@ const iobserveInstance = new IObserve({
 });
 ```
 
-## Usage - with npm
+## Install from npm
+
+To install IObserve locally with `npm`:
 
 ```
 npm install iobserve
 ```
 
-## Usage - from a CDN
+## Inclusion from a CDN
 
-The easiest way to use IObserve is to include the script from a CDN:
+To include IObserve from a CDN:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/iobserve@0.0.1/dist/iobserve.min.js"></script>
 ```
+
+## How to use
 
 Then, in your javascript code:
 
