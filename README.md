@@ -10,19 +10,35 @@ IObserve is a lightweight script that allows you to easily use browsers' `Inters
 
 ---
 
-## 👨‍💻 Getting started - HTML
+## Getting started
 
-In order to use IObserve, you shall do
+In order to use IObserve, you shall markup your observed elements like this
 
 ```html
-<div class="iobserved">...</div>
+<div class="iobserve">...</div>
 ```
 
-## 👩‍💻 Getting started - Script
+Then, in your javascript code:
 
-The latest, recommended version of IObserve is **0.0.1**.
+```js
+const onEnter: (el) => {
+  console.log(el, "entered the viewport");
+  // do something with it
+}
 
-### The simple, easiest way
+const iobserveInstance = new IObserve({
+  // Your custom settings go here
+  onEnter: onEnter
+});
+```
+
+## Usage - with npm
+
+```
+npm install iobserve
+```
+
+## Usage - from a CDN
 
 The easiest way to use IObserve is to include the script from a CDN:
 
@@ -112,39 +128,9 @@ Now you'll be able to call its methods, like:
 iobserveInstance.update();
 ```
 
-### Local install
+## Bundles
 
-If you prefer to install IObserve locally in your project, you can!
-
-#### Using npm
-
-```
-npm install iobserve
-```
-
-#### Using bower
-
-```
-bower install iobserve
-```
-
-#### Manual download
-
-Download one the latest [releases](https://github.com/verlok/iobserve/releases/). The files you need are inside the `dist` folder. If you don't know which one to pick, use `iobserve.min.js`, or read [about bundles](#bundles).
-
-### Local usage
-
-Should you install IObserve locally, you can import it as ES module like the following:
-
-```js
-import IObserve from "iobserve";
-```
-
-It's also possible to use the `require` commonJS syntax.
-
-### Bundles
-
-Inside the `dist` folder you will find different bundles.
+You can find and use different bundles.
 
 | Filename               | Module Type                                                   | Advantages                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
